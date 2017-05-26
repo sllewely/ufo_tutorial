@@ -25,4 +25,11 @@ public class PlayerControl : MonoBehaviour {
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		rb2d.AddForce (movement * speed);
 	}
+
+	// whenever touch a collider
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.CompareTag ("Pickup")) {
+			gameObject.SetActive (false);
+		}
+	}
 }
