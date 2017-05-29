@@ -28,8 +28,8 @@ public class PlayerControl : MonoBehaviour {
 
 	// whenever touch a collider
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Pickup")) {
-			gameObject.SetActive (false);
+		if (other.gameObject.CompareTag ("PickUp")) {
+			other.gameObject.SetActive (false);
 		}
 	}
 }
