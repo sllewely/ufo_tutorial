@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour {
 
 	public float speed;
     public Text countText;
+    public Text winText;
 
 	private Rigidbody2D rb2d;
     private int count;
@@ -16,6 +17,7 @@ public class PlayerControl : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D> ();
         count = 0;
         SetCountText();
+        winText.text = "";
     }
 	
 //	// Update is called once per frame before rendering a frame
@@ -43,5 +45,9 @@ public class PlayerControl : MonoBehaviour {
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
+        if (count >= 6)
+        {
+            winText.text = "Congrats!!";
+        }
     }
 }
